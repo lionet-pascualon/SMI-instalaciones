@@ -240,3 +240,39 @@ body {
     color: #666;
 }
 
+/* AJUSTES PARA CELULARES (Responsive) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Apila logo arriba y botones abajo */
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .navbar nav {
+        display: flex;
+        flex-wrap: wrap; /* Permite que los botones bajen si no entran */
+        justify-content: center;
+        gap: 10px;
+    }
+
+    /* Achicamos los links para que entren mejor */
+    .navbar nav a {
+        font-size: 14px;
+        padding: 5px 8px;
+    }
+
+    /* El botón de urgencias lo hacemos resaltar pero sin que tape nada */
+    .btn-nav {
+        width: 100%; /* Que ocupe todo el ancho en el celu para que sea fácil de tocar */
+        text-align: center;
+        order: 3; /* Lo manda al final de la lista */
+    }
+
+    .logo {
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+
+
