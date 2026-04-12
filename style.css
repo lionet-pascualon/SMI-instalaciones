@@ -136,3 +136,107 @@ body {
     color: white;
     padding: 20px;
 }
+
+/* ESTILOS DE LA GALERÍA DE TRABAJOS */
+.trabajos {
+    padding: 60px 0;
+    background-color: var(--blanco);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+    margin-top: -10px;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 5%;
+}
+
+.trabajo-card {
+    background: var(--blanco);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trabajo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.trabajo-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 250px; /* Altura fija para todas las fotos */
+    overflow: hidden;
+}
+
+.trabajo-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* MAGIA: Recorta la foto sin deformarla */
+    transition: transform 0.5s ease;
+}
+
+.trabajo-card:hover .trabajo-img-wrapper img {
+    transform: scale(1.1); /* Efecto zoom suave al pasar el mouse */
+}
+
+/* Efecto Overlay (Botón que aparece al hover) */
+.trabajo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.trabajo-card:hover .trabajo-overlay {
+    opacity: 1;
+}
+
+.btn-sm-wa {
+    background-color: #25D366; /* Verde WhatsApp */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-sm-wa:hover {
+    background-color: #1ebd5a;
+}
+
+.trabajo-footer {
+    padding: 20px;
+}
+
+.trabajo-footer h4 {
+    margin: 0 0 5px 0;
+    color: var(--verde-gas);
+    font-size: 18px;
+}
+
+.trabajo-footer p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+
