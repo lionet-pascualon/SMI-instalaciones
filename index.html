@@ -3,97 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMI Instalaciones | Trabajos Realizados</title>
+    <title>SMI Instalaciones | Portfolio Profesional</title>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
         html { scroll-behavior: smooth; }
+        .filter-active { background-color: #2e7d32 !important; color: white !important; }
     </style>
 </head>
 <body class="bg-[#f4f7f6] font-sans text-[#333333]">
 
-    <a href="#" class="fixed bottom-6 right-6 z-50 bg-[#25D366] p-4 rounded-full shadow-2xl hover:scale-110 transition-transform">
-        <img src="https://unpkg.com/lucide-static@latest/icons/message-circle.svg" class="w-8 h-8 invert" alt="WhatsApp">
-    </a>
-
-    <nav class="sticky top-0 z-40 bg-white shadow-md px-4 py-4">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <nav class="sticky top-0 z-50 bg-white shadow-md px-4 py-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
             <span class="text-2xl font-black text-[#2e7d32]">SMI <span class="text-gray-800">Instalaciones</span></span>
-            <div class="hidden md:flex gap-6">
-                <a href="#trabajos" class="hover:text-[#2e7d32] font-semibold">Ver Trabajos</a>
-                <a href="#contacto" class="hover:text-[#2e7d32] font-semibold">Contacto</a>
+            
+            <div class="flex flex-wrap justify-center gap-2">
+                <button onclick="filtrar('todos')" class="btn-filtro filter-active px-4 py-2 rounded-full border border-[#2e7d32] text-[#2e7d32] font-bold text-xs transition-all">TODOS</button>
+                <button onclick="filtrar('gas')" class="btn-filtro px-4 py-2 rounded-full border border-[#2e7d32] text-[#2e7d32] font-bold text-xs transition-all">SERVICIOS DE GAS</button>
+                <button onclick="filtrar('agua')" class="btn-filtro px-4 py-2 rounded-full border border-[#2e7d32] text-[#2e7d32] font-bold text-xs transition-all">SERVICIOS DE AGUA</button>
+                <button onclick="filtrar('luz')" class="btn-filtro px-4 py-2 rounded-full border border-[#2e7d32] text-[#2e7d32] font-bold text-xs transition-all">ELECTRICIDAD</button>
             </div>
-            <a href="tel:..." class="bg-[#2e7d32] text-white px-4 py-2 rounded-lg font-bold text-sm">LLAMAR</a>
         </div>
     </nav>
 
-    <header class="relative bg-gray-900 py-32 px-6 text-center text-white">
-        <div class="absolute inset-0 opacity-40">
-            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80" class="w-full h-full object-cover" alt="Fondo">
-        </div>
-        <div class="relative z-10">
-            <h1 class="text-5xl font-extrabold mb-6">Expertos en Instalaciones</h1>
-            <a href="#trabajos" class="bg-[#4caf50] px-8 py-4 rounded-lg font-bold hover:bg-[#43a047] transition-all inline-block shadow-lg">
-                Ver Trabajos Realizados
-            </a>
-        </div>
-    </header>
-
-    <section id="trabajos" class="max-w-7xl mx-auto py-20 px-6">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
-            <div>
-                <h2 class="text-4xl font-bold text-gray-800">Portfolio de Obras</h2>
-                <p class="text-gray-600 mt-2">Calidad certificada en cada proyecto finalizado.</p>
-            </div>
+    <section id="portfolio" class="max-w-7xl mx-auto py-16 px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-gray-800">Nuestros Trabajos Realizados</h2>
+            <p class="text-gray-500 mt-2">Seleccioná una categoría arriba para filtrar las obras.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Gas">
-                    <span class="absolute top-4 left-4 bg-[#2e7d32] text-white text-xs font-bold px-3 py-1 rounded-full">GAS</span>
+        <div id="contenedor-trabajos" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <article class="trabajo-card gas bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1585338447937-7082f8fc763d?auto=format&fit=crop&q=80" class="w-full h-full object-cover" alt="Caldera">
+                    <div class="absolute top-4 left-4 bg-[#2e7d32] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Gas</div>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2">Instalación de Caldera Central</h3>
-                    <p class="text-gray-600 text-sm italic">Santa Fe Capital - Obra Residencial</p>
+                    <h3 class="text-xl font-bold mb-2">Instalación de Caldera Dual</h3>
+                    <p class="text-gray-600 text-sm">Montaje y puesta en marcha de sistema de calefacción central en edificio residencial.</p>
                 </div>
-            </div>
+            </article>
 
-            <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Agua">
-                    <span class="absolute top-4 left-4 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full">AGUA</span>
+            <article class="trabajo-card luz bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1621905252507-b354bcadc8d0?auto=format&fit=crop&q=80" class="w-full h-full object-cover" alt="Electricidad">
+                    <div class="absolute top-4 left-4 bg-yellow-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Electricidad</div>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2">Renovación de Cañerías</h3>
-                    <p class="text-gray-600 text-sm italic">Barrio El Pozo - Mantenimiento</p>
+                    <h3 class="text-xl font-bold mb-2">Reparación en Jardín de Infantes</h3>
+                    <p class="text-gray-600 text-sm">Adecuación de enchufes y tableros bajo normas de seguridad para establecimientos educativos.</p>
                 </div>
-            </div>
+            </article>
 
-            <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
-                <div class="relative h-64 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1621905252507-b354bcadc8d0?auto=format&fit=crop&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Luz">
-                    <span class="absolute top-4 left-4 bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full">ELECTRICIDAD</span>
+            <article class="trabajo-card agua bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80" class="w-full h-full object-cover" alt="Plomería">
+                    <div class="absolute top-4 left-4 bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Agua</div>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2">Tablero Eléctrico Nuevo</h3>
-                    <p class="text-gray-600 text-sm italic">Local Comercial - Centro</p>
+                    <h3 class="text-xl font-bold mb-2">Cambio de Colectores de Agua</h3>
+                    <p class="text-gray-600 text-sm">Instalación de nuevas cañerías de termofusión en terraza de complejo de departamentos.</p>
                 </div>
-            </div>
+            </article>
+
         </div>
     </section>
 
-    <footer id="contacto" class="bg-[#1a1a1a] text-white py-16 px-6">
-        <div class="max-w-7xl mx-auto text-center">
-            <h4 class="text-2xl font-bold text-[#4caf50] mb-4">SMI Instalaciones</h4>
-            <p class="text-gray-400 mb-8">Consultas por presupuestos y urgencias.</p>
-            <div class="flex justify-center gap-6">
-                <img src="https://unpkg.com/lucide-static@latest/icons/instagram.svg" class="w-6 h-6 text-gray-400 hover:text-white cursor-pointer" alt="IG">
-                <img src="https://unpkg.com/lucide-static@latest/icons/facebook.svg" class="w-6 h-6 text-gray-400 hover:text-white cursor-pointer" alt="FB">
-            </div>
-            <p class="mt-12 text-gray-600 text-sm">© 2026 SMI Instalaciones. Hecho por Milton.</p>
-        </div>
+    <footer class="bg-[#1a1a1a] text-white py-12 px-6 text-center">
+        <p class="text-[#4caf50] font-bold mb-4 text-xl">SMI Instalaciones</p>
+        <p class="text-gray-500 text-sm">Trabajos garantizados y matriculados.</p>
     </footer>
+
+    <script>
+        function filtrar(categoria) {
+            const trabajos = document.querySelectorAll('.trabajo-card');
+            const botones = document.querySelectorAll('.btn-filtro');
+
+            // 1. Manejar estado de los botones
+            botones.forEach(btn => btn.classList.remove('filter-active'));
+            event.currentTarget.classList.add('filter-active');
+
+            // 2. Mostrar/Ocultar tarjetas
+            trabajos.forEach(card => {
+                if (categoria === 'todos') {
+                    card.style.display = 'block';
+                } else {
+                    if (card.classList.contains(categoria)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
 
 </body>
 </html>
