@@ -3,119 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMI - Servicio de Mantenimiento e Instalaciones</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>SMI Instalaciones - Servicios</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+    </style>
 </head>
-<body>
+<body class="bg-gray-50 font-sans text-gray-900">
 
-    <header class="navbar">
-        <div class="logo">SMI <span>Instalaciones</span></div>
-        <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#servicios">Servicios</a>
-            <a href="#trabajos">Trabajos</a>
-            <a href="https://wa.me/3513510219" class="btn-nav">Urgencias 24hs</a>
-        </nav>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    </header>
-
-    <section class="hero" id="inicio">
-        <div class="hero-content">
-            <h1>Especializado en gas y electricidad</h1>
-            <p>Soluciones seguras y garantizadas para tu hogar o comercio.</p>
-            <a href="#servicios" class="btn-main">Ver Servicios</a>
-        </div>
-    </section>
-
-    <section class="servicios" id="servicios">
-        <h2 class="section-title">Nuestras Especialidades</h2>
-        <div class="grid-servicios">
-            <div class="item-servicio">
-                <div class="icon">🔥</div>
-                <h3>Gasista</h3>
-                <p>Instalaciones, detección de fugas y service de estufas/termotanques.</p>
-            </div>
-            <div class="item-servicio">
-                <div class="icon">🚰</div>
-                <h3>Plomería</h3>
-                <p>Reparaciones generales, griferías y desagües.</p>
-            </div>
-            <div class="item-servicio">
-                <div class="icon">⚡</div>
-                <h3>Electricidad</h3>
-                <p>Mantenimiento preventivo y tableros eléctricos.</p>
+    <nav class="bg-white shadow-sm border-b border-gray-100 p-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-blue-600">SMI <span class="text-gray-700">Instalaciones</span></h1>
+            <div class="flex gap-4">
+                <img src="https://unpkg.com/lucide-static@latest/icons/phone.svg" class="w-6 h-6" alt="Contacto">
+                <span class="font-medium">Contacto</span>
             </div>
         </div>
-    </section>
+    </nav>
 
-    <section class="trabajos" id="trabajos">
-    <div class="container">
-        <h2 class="section-title">Nuestras Instalaciones</h2>
-        <p class="section-subtitle">Ejemplos reales de trabajos de gas, plomería y mantenimiento.</p>
-        
-        <div class="galeria-grid">
-            <div class="trabajo-card">
-                <div class="trabajo-img-wrapper">
-                    <img src="https://via.placeholder.com/600x400/2e7d32/ffffff?text=SMI+Instalación+Gas" alt="Instalación de Gas SMI">
-                    <div class="trabajo-overlay">
-                        <a href="https://wa.me/3512366414?text=Hola!%20Me%20interesa%20un%20trabajo%20como%20el%20de%20la%20foto%201" class="btn-sm-wa" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Consultar
-                        </a>
-                    </div>
-                </div>
-                <div class="trabajo-footer">
-                    <h4>Conexión de Termotanque</h4>
-                    <p>Instalación segura con materiales aprobados.</p>
-                </div>
-            </div>
+    <main class="max-w-6xl mx-auto py-16 px-4">
+        <header class="text-center mb-12">
+            <h2 class="text-4xl font-bold mb-4">Nuestros Servicios</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">Soluciones profesionales para el hogar y la industria. Calidad garantizada en cada instalación.</p>
+        </header>
 
-            <div class="trabajo-card">
-                <div class="trabajo-img-wrapper">
-                    <img src="https://via.placeholder.com/600x400/2e7d32/ffffff?text=SMI+Plomería" alt="Trabajo de Plomería SMI">
-                    <div class="trabajo-overlay">
-                        <a href="https://wa.me/3512366414?text=Hola!%20Me%20interesa%20un%20trabajo%20como%20el%20de%20la%20foto%202" class="btn-sm-wa" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Consultar
-                        </a>
-                    </div>
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <article class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                <div class="bg-blue-50 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+                    <img src="https://unpkg.com/lucide-static@latest/icons/wrench.svg" class="w-6 h-6 text-blue-600" alt="Herramientas">
                 </div>
-                <div class="trabajo-footer">
-                    <h4>Reparación de Colector</h4>
-                    <p>Cambio de llaves de paso en bajada de tanque.</p>
-                </div>
-            </div>
+                <h3 class="text-xl font-bold mb-3">Mantenimiento</h3>
+                <p class="text-gray-600">Revisiones periódicas para asegurar el funcionamiento óptimo de sus equipos.</p>
+            </article>
 
-            <div class="trabajo-card">
-                <div class="trabajo-img-wrapper">
-                    <img src="https://via.placeholder.com/600x400/2e7d32/ffffff?text=SMI+Mantenimiento" alt="Mantenimiento SMI">
-                    <div class="trabajo-overlay">
-                        <a href="https://wa.me/3512366414?text=Hola!%20Me%20interesa%20un%20trabajo%20como%20el%20de%20la%20foto%203" class="btn-sm-wa" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Consultar
-                        </a>
-                    </div>
+            <article class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                <div class="bg-blue-50 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+                    <img src="https://unpkg.com/lucide-static@latest/icons/settings.svg" class="w-6 h-6 text-blue-600" alt="Instalación">
                 </div>
-                <div class="trabajo-footer">
-                    <h4>Service de Estufa</h4>
-                    <p>Limpieza y calibración de pico inyector.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+                <h3 class="text-xl font-bold mb-3">Instalaciones</h3>
+                <p class="text-gray-600">Instalación de sistemas nuevos con cumplimiento estricto de normas de seguridad.</p>
+            </article>
 
-<section class="trabajos" id="trabajos">
-    <h2 class="section-title">Trabajos Recientes</h2>
-    <div class="galeria-grid">
-        <div class="trabajo-card">
-            <img src="foto1.jpg" alt="Instalación de Gas">
-            <div class="trabajo-info">
-                <h4>Instalación de Caldera</h4>
-                <p>Zona Norte - Córdoba</p>
-                <a href="https://wa.me/3513510219" class="btn-sm">Consultar</a>
-            </div>
-        </div>
-        </div>
-</section>
-    
+            <article class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                <div class="bg-blue-50 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+                    <img src="https://unpkg.com/lucide-static@latest/icons/shield-check.svg" class="w-6 h-6 text-blue-600" alt="Garantía">
+                </div>
+                <h3 class="text-xl font-bold mb-3">Garantía SMI</h3>
+                <p class="text-gray-600">Todos nuestros trabajos cuentan con respaldo y soporte técnico post-venta.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer class="text-center py-8 text-gray-400 text-sm">
+        <p>&copy; 2026 SMI Instalaciones. Todos los derechos reservados.</p>
+    </footer>
+
 </body>
 </html>
