@@ -3,59 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMI Instalaciones - Servicios</title>
+    <title>SMI Instalaciones | Gas y Servicios</title>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
     </style>
 </head>
-<body class="bg-gray-50 font-sans text-gray-900">
+<body class="bg-[#f4f7f6] font-sans text-[#333333]">
 
-    <nav class="bg-white shadow-sm border-b border-gray-100 p-4">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-blue-600">SMI <span class="text-gray-700">Instalaciones</span></h1>
-            <div class="flex gap-4">
-                <img src="https://unpkg.com/lucide-static@latest/icons/phone.svg" class="w-6 h-6" alt="Contacto">
-                <span class="font-medium">Contacto</span>
+    <nav class="sticky top-0 z-50 bg-white shadow-lg border-b border-gray-100 px-[5%] py-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-2xl font-bold text-[#2e7d32]">
+                SMI <span class="text-[#333333]">Instalaciones</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="#" class="text-gray-600 hover:text-[#2e7d32] font-medium hidden md:block">Servicios</a>
+                <a href="#" class="text-gray-600 hover:text-[#2e7d32] font-medium hidden md:block">Galería</a>
+                <a href="https://wa.me/tu-numero" class="bg-[#2e7d32] text-white px-5 py-2.5 rounded-lg font-bold flex items-center gap-2 hover:bg-[#1b5e20] transition-colors shadow-md">
+                    <img src="https://unpkg.com/lucide-static@latest/icons/phone-call.svg" class="w-5 h-5 invert" alt="Urgencias">
+                    URGENCIAS 24HS
+                </a>
             </div>
         </div>
     </nav>
 
-    <main class="max-w-6xl mx-auto py-16 px-4">
-        <header class="text-center mb-12">
-            <h2 class="text-4xl font-bold mb-4">Nuestros Servicios</h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">Soluciones profesionales para el hogar y la industria. Calidad garantizada en cada instalación.</p>
-        </header>
+    <header class="relative h-[70vh] flex items-center justify-center text-center text-white px-4 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ee1?auto=format&fit=crop&q=80" class="w-full h-full object-cover" alt="Instalaciones de Gas">
+            <div class="absolute inset-0 bg-black/60"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-3xl">
+            <h2 class="text-4xl md:text-6xl font-bold mb-6">Instalaciones de Gas Profesionales</h2>
+            <p class="text-lg md:text-xl text-gray-200 mb-8">Matriculados al servicio de su seguridad y confort en el hogar.</p>
+            <a href="#" class="bg-[#4caf50] hover:bg-[#43a047] text-white px-8 py-4 rounded-lg font-bold text-lg shadow-xl transition-transform hover:scale-105 inline-block">
+                Pedir Presupuesto Gratis
+            </a>
+        </div>
+    </header>
 
-        <section class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <article class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                <div class="bg-blue-50 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                    <img src="https://unpkg.com/lucide-static@latest/icons/wrench.svg" class="w-6 h-6 text-blue-600" alt="Herramientas">
+    <section class="max-w-7xl mx-auto py-20 px-[5%]">
+        <div class="text-center mb-16">
+            <h3 class="text-3xl font-bold text-gray-800">Nuestros Servicios</h3>
+            <div class="w-20 h-1.5 bg-[#2e7d32] mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <article class="bg-white p-8 rounded-xl shadow-sm border-b-4 border-[#2e7d32] transition-all hover:-translate-y-2 hover:shadow-xl group">
+                <div class="mb-6">
+                    <img src="https://unpkg.com/lucide-static@latest/icons/flame.svg" class="w-12 h-12 text-[#2e7d32] group-hover:scale-110 transition-transform" alt="Gas">
                 </div>
-                <h3 class="text-xl font-bold mb-3">Mantenimiento</h3>
-                <p class="text-gray-600">Revisiones periódicas para asegurar el funcionamiento óptimo de sus equipos.</p>
+                <h4 class="text-xl font-bold mb-3 text-[#2e7d32]">Gas Natural</h4>
+                <p class="text-gray-600">Instalaciones, reparaciones y planos para nuevas conexiones matriculadas.</p>
             </article>
 
-            <article class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                <div class="bg-blue-50 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                    <img src="https://unpkg.com/lucide-static@latest/icons/settings.svg" class="w-6 h-6 text-blue-600" alt="Instalación">
+            <article class="bg-white p-8 rounded-xl shadow-sm border-b-4 border-[#2e7d32] transition-all hover:-translate-y-2 hover:shadow-xl group">
+                <div class="mb-6">
+                    <img src="https://unpkg.com/lucide-static@latest/icons/thermometer.svg" class="w-12 h-12 text-[#2e7d32] group-hover:scale-110 transition-transform" alt="Calefacción">
                 </div>
-                <h3 class="text-xl font-bold mb-3">Instalaciones</h3>
-                <p class="text-gray-600">Instalación de sistemas nuevos con cumplimiento estricto de normas de seguridad.</p>
+                <h4 class="text-xl font-bold mb-3 text-[#2e7d32]">Calefacción</h4>
+                <p class="text-gray-600">Instalación y service de estufas, calderas y radiadores para todo el invierno.</p>
             </article>
 
-            <article class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                <div class="bg-blue-50 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-                    <img src="https://unpkg.com/lucide-static@latest/icons/shield-check.svg" class="w-6 h-6 text-blue-600" alt="Garantía">
+            <article class="bg-white p-8 rounded-xl shadow-sm border-b-4 border-[#2e7d32] transition-all hover:-translate-y-2 hover:shadow-xl group">
+                <div class="mb-6">
+                    <img src="https://unpkg.com/lucide-static@latest/icons/shield-check.svg" class="w-12 h-12 text-[#2e7d32] group-hover:scale-110 transition-transform" alt="Seguridad">
                 </div>
-                <h3 class="text-xl font-bold mb-3">Garantía SMI</h3>
-                <p class="text-gray-600">Todos nuestros trabajos cuentan con respaldo y soporte técnico post-venta.</p>
-            </article>
-        </section>
-    </main>
+                <h4 class="text-xl font-bold mb-3 text-[#2e7d32]">Pruebas de Hermeticidad</h4>
+                <p class="text-gray-600 text-sm">Detección de fugas y mantenimiento preventivo con certificación oficial.</p>
+            </div>
+        </div>
+    </section>
 
-    <footer class="text-center py-8 text-gray-400 text-sm">
-        <p>&copy; 2026 SMI Instalaciones. Todos los derechos reservados.</p>
+    <section class="bg-white py-20 px-[5%]">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-3xl font-bold text-center mb-12">Nuestros Trabajos</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="relative overflow-hidden rounded-xl shadow-md group h-64">
+                    <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Obra">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <h4 class="text-white font-bold">Instalación Industrial</h4>
+                        <p class="text-gray-300 text-sm">Planta de gas zona norte</p>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t border-gray-200 py-10 text-center">
+        <p class="text-gray-400 text-sm">&copy; 2026 SMInstalaciones - Milton & Ivan. Todos los derechos reservados.</p>
     </footer>
 
 </body>
