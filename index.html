@@ -3,95 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMI Instalaciones | Gas y Servicios</title>
+    <title>SMI Instalaciones | Servicios Integrales</title>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        
+        /* Animación para el WhatsApp flotante */
+        @keyframes pulse-green {
+            0% { shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+            100% { shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .animate-pulse-green {
+            animation: pulse-green 2s infinite;
+        }
     </style>
 </head>
 <body class="bg-[#f4f7f6] font-sans text-[#333333]">
 
-    <nav class="sticky top-0 z-50 bg-white shadow-lg border-b border-gray-100 px-[5%] py-4">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-            <div class="text-2xl font-bold text-[#2e7d32]">
-                SMI <span class="text-[#333333]">Instalaciones</span>
-            </div>
-            <div class="flex items-center gap-4">
-                <a href="#" class="text-gray-600 hover:text-[#2e7d32] font-medium hidden md:block">Servicios</a>
-                <a href="#" class="text-gray-600 hover:text-[#2e7d32] font-medium hidden md:block">Galería</a>
-                <a href="https://wa.me/tu-numero" class="bg-[#2e7d32] text-white px-5 py-2.5 rounded-lg font-bold flex items-center gap-2 hover:bg-[#1b5e20] transition-colors shadow-md">
-                    <img src="https://unpkg.com/lucide-static@latest/icons/phone-call.svg" class="w-5 h-5 invert" alt="Urgencias">
-                    URGENCIAS 24HS
-                </a>
+    <a href="https://wa.me/tu-numero-aqui" target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] p-4 rounded-full shadow-2xl hover:scale-110 transition-transform animate-bounce">
+        <img src="https://unpkg.com/lucide-static@latest/icons/message-circle.svg" class="w-8 h-8 invert" alt="WhatsApp">
+    </a>
+
+    <nav class="sticky top-0 z-40 bg-white shadow-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-black tracking-tight text-[#2e7d32]">SMI <span class="text-gray-800">Instalaciones</span></span>
+                </div>
+
+                <div class="hidden md:flex space-x-2">
+                    <button class="px-4 py-2 rounded-full text-sm font-semibold text-gray-700 hover:bg-[#2e7d32] hover:text-white transition-all flex items-center gap-2">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/flame.svg" class="w-4 h-4" alt="Gas"> Gas
+                    </button>
+                    <button class="px-4 py-2 rounded-full text-sm font-semibold text-gray-700 hover:bg-[#2e7d32] hover:text-white transition-all flex items-center gap-2">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/droplets.svg" class="w-4 h-4" alt="Agua"> Agua
+                    </button>
+                    <button class="px-4 py-2 rounded-full text-sm font-semibold text-gray-700 hover:bg-[#2e7d32] hover:text-white transition-all flex items-center gap-2">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/zap.svg" class="w-4 h-4" alt="Luz"> Electricidad
+                    </button>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <a href="tel:tu-telefono" class="bg-[#2e7d32] text-white px-6 py-2.5 rounded-xl font-bold text-sm shadow-lg hover:bg-[#1b5e20] transition-colors flex items-center gap-2">
+                        <img src="https://unpkg.com/lucide-static@latest/icons/phone.svg" class="w-4 h-4 invert" alt="Llamar">
+                        LLAMAR AHORA
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <header class="relative h-[70vh] flex items-center justify-center text-center text-white px-4 overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ee1?auto=format&fit=crop&q=80" class="w-full h-full object-cover" alt="Instalaciones de Gas">
-            <div class="absolute inset-0 bg-black/60"></div>
+    <header class="relative bg-gray-900 py-24 px-6 text-center text-white">
+        <div class="absolute inset-0 opacity-40">
+            <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&q=80" class="w-full h-full object-cover" alt="Trabajo">
         </div>
-        
-        <div class="relative z-10 max-w-3xl">
-            <h2 class="text-4xl md:text-6xl font-bold mb-6">Instalaciones de Gas Profesionales</h2>
-            <p class="text-lg md:text-xl text-gray-200 mb-8">Matriculados al servicio de su seguridad y confort en el hogar.</p>
-            <a href="#" class="bg-[#4caf50] hover:bg-[#43a047] text-white px-8 py-4 rounded-lg font-bold text-lg shadow-xl transition-transform hover:scale-105 inline-block">
-                Pedir Presupuesto Gratis
-            </a>
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <h1 class="text-5xl font-extrabold mb-6">Mantenimiento e Instalaciones Profesionales</h1>
+            <p class="text-xl text-gray-300 mb-10 text-pretty">Soluciones rápidas y garantizadas para Gas, Agua y Electricidad en todo el partido de Santa Fe.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="bg-[#4caf50] px-8 py-4 rounded-lg font-bold hover:scale-105 transition-transform shadow-xl">Ver Trabajos Realizados</button>
+                <button class="bg-white/10 backdrop-blur-md border border-white/20 px-8 py-4 rounded-lg font-bold hover:bg-white/20 transition-all">Nuestras Tarifas</button>
+            </div>
         </div>
     </header>
 
-    <section class="max-w-7xl mx-auto py-20 px-[5%]">
-        <div class="text-center mb-16">
-            <h3 class="text-3xl font-bold text-gray-800">Nuestros Servicios</h3>
-            <div class="w-20 h-1.5 bg-[#2e7d32] mx-auto mt-4 rounded-full"></div>
+    <section class="max-w-7xl mx-auto py-20 px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <article class="bg-white p-10 rounded-3xl shadow-sm border-b-8 border-[#2e7d32] hover:shadow-2xl transition-all group">
+                <img src="https://unpkg.com/lucide-static@latest/icons/info.svg" class="w-12 h-12 mb-6 text-[#2e7d32]" alt="Info">
+                <h3 class="text-2xl font-bold mb-4">Especialista en Gas</h3>
+                <p class="text-gray-600">Instalaciones de cocinas, termotanques y estufas con normativa vigente.</p>
+            </article>
+            
+            <article class="bg-white p-10 rounded-3xl shadow-sm border-b-8 border-blue-500 hover:shadow-2xl transition-all group">
+                <img src="https://unpkg.com/lucide-static@latest/icons/waves.svg" class="w-12 h-12 mb-6 text-blue-500" alt="Agua">
+                <h3 class="text-2xl font-bold mb-4">Plomería Integral</h3>
+                <p class="text-gray-600">Reparación de fugas, tanques de agua y griferías en general.</p>
+            </article>
+
+            <article class="bg-white p-10 rounded-3xl shadow-sm border-b-8 border-yellow-500 hover:shadow-2xl transition-all group">
+                <img src="https://unpkg.com/lucide-static@latest/icons/lightbulb.svg" class="w-12 h-12 mb-6 text-yellow-500" alt="Luz">
+                <h3 class="text-2xl font-bold mb-4">Electricidad</h3>
+                <p class="text-gray-600">Tableros eléctricos, cortocircuitos e iluminación LED.</p>
+            </article>
         </div>
+    </section>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <article class="bg-white p-8 rounded-xl shadow-sm border-b-4 border-[#2e7d32] transition-all hover:-translate-y-2 hover:shadow-xl group">
-                <div class="mb-6">
-                    <img src="https://unpkg.com/lucide-static@latest/icons/flame.svg" class="w-12 h-12 text-[#2e7d32] group-hover:scale-110 transition-transform" alt="Gas">
+    <footer class="bg-[#1a1a1a] text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-gray-800 pb-12">
+            <div>
+                <h4 class="text-xl font-bold mb-6 text-[#4caf50]">SMI Instalaciones</h4>
+                <p class="text-gray-400">Brindando soluciones seguras y eficientes para el hogar desde hace más de 10 años. Calidad y confianza en cada trabajo.</p>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-6">Navegación</h4>
+                <ul class="space-y-3 text-gray-400">
+                    <li><a href="#" class="hover:text-[#4caf50]">Inicio</a></li>
+                    <li><a href="#" class="hover:text-[#4caf50]">Trabajos de Gas</a></li>
+                    <li><a href="#" class="hover:text-[#4caf50]">Obras de Agua</a></li>
+                    <li><a href="#" class="hover:text-[#4caf50]">Electricidad</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-6">Atención al Cliente</h4>
+                <div class="flex items-center gap-3 text-gray-400 mb-4">
+                    <img src="https://unpkg.com/lucide-static@latest/icons/map-pin.svg" class="w-5 h-5 text-[#4caf50]" alt="Mapa">
+                    Cordoba, Argentina
                 </div>
-                <h4 class="text-xl font-bold mb-3 text-[#2e7d32]">Gas Natural</h4>
-                <p class="text-gray-600">Instalaciones, reparaciones y planos para nuevas conexiones matriculadas.</p>
-            </article>
-
-            <article class="bg-white p-8 rounded-xl shadow-sm border-b-4 border-[#2e7d32] transition-all hover:-translate-y-2 hover:shadow-xl group">
-                <div class="mb-6">
-                    <img src="https://unpkg.com/lucide-static@latest/icons/thermometer.svg" class="w-12 h-12 text-[#2e7d32] group-hover:scale-110 transition-transform" alt="Calefacción">
+                <div class="flex items-center gap-3 text-gray-400">
+                    <img src="https://unpkg.com/lucide-static@latest/icons/mail.svg" class="w-5 h-5 text-[#4caf50]" alt="Email">
+                    smi.instalaciones@mail.com
                 </div>
-                <h4 class="text-xl font-bold mb-3 text-[#2e7d32]">Calefacción</h4>
-                <p class="text-gray-600">Instalación y service de estufas, calderas y radiadores para todo el invierno.</p>
-            </article>
-
-            <article class="bg-white p-8 rounded-xl shadow-sm border-b-4 border-[#2e7d32] transition-all hover:-translate-y-2 hover:shadow-xl group">
-                <div class="mb-6">
-                    <img src="https://unpkg.com/lucide-static@latest/icons/shield-check.svg" class="w-12 h-12 text-[#2e7d32] group-hover:scale-110 transition-transform" alt="Seguridad">
-                </div>
-                <h4 class="text-xl font-bold mb-3 text-[#2e7d32]">Pruebas de Hermeticidad</h4>
-                <p class="text-gray-600 text-sm">Detección de fugas y mantenimiento preventivo con certificación oficial.</p>
             </div>
         </div>
-    </section>
-
-    <section class="bg-white py-20 px-[5%]">
-        <div class="max-w-7xl mx-auto">
-            <h3 class="text-3xl font-bold text-center mb-12">Nuestros Trabajos</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="relative overflow-hidden rounded-xl shadow-md group h-64">
-                    <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Obra">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <h4 class="text-white font-bold">Instalación Industrial</h4>
-                        <p class="text-gray-300 text-sm">Planta de gas zona norte</p>
-                    </div>
-                </div>
-                </div>
+        <div class="text-center pt-8 text-gray-500 text-sm">
+            &copy; 2026 SMI Instalaciones. Diseñado con ❤️ por Milton.
         </div>
-    </section>
-
-    <footer class="bg-white border-t border-gray-200 py-10 text-center">
-        <p class="text-gray-400 text-sm">&copy; 2026 SMInstalaciones - Milton & Ivan. Todos los derechos reservados.</p>
     </footer>
 
 </body>
