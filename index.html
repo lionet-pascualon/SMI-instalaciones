@@ -3,66 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMI Instalaciones | Portfolio Profesional</title>
+    <title>SMI Instalaciones | Gas, Agua y Electricidad</title>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-        html { scroll-behavior: smooth; }
-        .filter-active { background-color: #2e7d32 !important; color: white !important; }
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root{
+            --verde-oscuro:#14532d;
+            --verde:#2e7d32;
+            --verde-claro:#e8f3e9;
+            --amarillo:#f5c518;
+            --tinta:#1c1f1c;
+            --gris:#5f6b64;
+            --hueso:#f7f7f4;
+        }
+        html{ scroll-behavior:smooth; }
+        body{ font-family:'Inter', sans-serif; color:var(--tinta); background:var(--hueso); }
+        h1,h2,.display{ font-family:'Archivo Black', sans-serif; letter-spacing:-0.01em; }
+
+        /* Franja tipo "caño" - amarillo y verde, guiño a las cintas de señalización de gasoductos */
+        .franja-caño{
+            height:10px;
+            background:repeating-linear-gradient(135deg, var(--amarillo) 0 22px, var(--verde) 22px 44px);
+        }
+
+        .filter-active{ background-color:var(--verde) !important; color:#fff !important; border-color:var(--verde) !important; }
+        .btn-filtro{ transition:all .2s ease; }
+        .btn-filtro:hover{ background-color:var(--verde-claro); }
+
+        .trabajo-card{ transition:transform .25s ease, box-shadow .25s ease; }
+        .trabajo-card:hover{ transform:translateY(-4px); }
+
+        .nav-link{ position:relative; }
+        .nav-link::after{
+            content:''; position:absolute; left:0; bottom:-4px; width:0; height:2px;
+            background:var(--amarillo); transition:width .2s ease;
+        }
+        .nav-link:hover::after{ width:100%; }
     </style>
 </head>
-<body class="bg-[#f4f7f6] font-sans text-[#333333]">
+<body>
 
-    <nav class="sticky top-0 z-50 bg-white shadow-md px-4 py-4">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-            <span class="text-2xl font-black text-[#2e7d32]">SMI <span class="text-gray-800">Instalaciones</span></span>
-            
-            <div class="flex flex-wrap justify-center gap-2">
-                <button onclick="filtrar('todos')" class="btn-filtro filter-active px-4 py-2 rounded-full border border-[#2e7d32] text-[#2e7d32] font-bold text-xs transition-all">TODOS</button>
-                <button onclick="filtrar('gas')" class="btn-filtro px-4 py-2 rounded-full border border-[#2e7d32] text-[#2e7d32] font-bold text-xs transition-all">SERVICIOS DE GAS</button>
-                <button onclick="filtrar('agua')" class="btn-filtro px-4 py-2 rounded-full border border-[#2e7d32] text-[#2e7d32] font-bold text-xs transition-all">SERVICIOS DE AGUA</button>
-                <button onclick="filtrar('luz')" class="btn-filtro px-4 py-2 rounded-full border border-[#2e7d32] text-[#2e7d32] font-bold text-xs transition-all">ELECTRICIDAD</button>
+    <div class="franja-caño"></div>
+
+    <!-- HEADER / NAV -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-3">
+            <a href="#inicio" class="text-2xl font-black text-[var(--verde-oscuro)] display">
+                SMI <span class="text-[var(--tinta)]">INSTALACIONES</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-gray-700">
+                <a href="#portfolio" class="nav-link">Trabajos</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </nav>
+
+            <a href="tel:3510219" class="flex items-center gap-2 bg-[var(--verde)] hover:bg-[var(--verde-oscuro)] text-white font-bold text-sm px-5 py-2.5 rounded-full transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.1 15.1 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24 11.3 11.3 0 0 0 3.54.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.3 11.3 0 0 0 .57 3.54 1 1 0 0 1-.25 1.01l-2.2 2.24Z"/></svg>
+                351 021-9
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="inicio" class="relative overflow-hidden bg-white">
+        <div class="max-w-7xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="inline-block bg-[var(--verde-claro)] text-[var(--verde-oscuro)] text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-5">
+                    Matriculados y garantizados
+                </span>
+                <h1 class="display text-4xl md:text-5xl leading-[1.1] text-[var(--tinta)] mb-5">
+                    Gas, agua y electricidad,<br class="hidden md:block"> resuelto de una vez.
+                </h1>
+                <p class="text-gray-600 text-lg mb-8 max-w-md">
+                    Instalación, mantenimiento y reparación con normas de seguridad al día. Trabajos prolijos, presupuesto claro y sin sorpresas.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="tel:3510219" class="bg-[var(--verde)] hover:bg-[var(--verde-oscuro)] text-white font-bold px-7 py-3.5 rounded-full transition-colors">
+                        Llamar ahora
+                    </a>
+                    <a href="#portfolio" class="border-2 border-[var(--tinta)] text-[var(--tinta)] font-bold px-7 py-3.5 rounded-full hover:bg-[var(--tinta)] hover:text-white transition-colors">
+                        Ver trabajos
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-[var(--verde-claro)] rounded-3xl p-6 flex flex-col items-center justify-center text-center">
+                    <div class="w-3 h-14 rounded-full bg-[var(--amarillo)] mb-3"></div>
+                    <p class="font-bold text-sm">Gas</p>
+                </div>
+                <div class="bg-[var(--verde-claro)] rounded-3xl p-6 flex flex-col items-center justify-center text-center mt-8">
+                    <div class="w-3 h-14 rounded-full bg-blue-500 mb-3"></div>
+                    <p class="font-bold text-sm">Agua</p>
+                </div>
+                <div class="bg-[var(--verde-claro)] rounded-3xl p-6 flex flex-col items-center justify-center text-center -mt-8 col-span-2">
+                    <div class="w-14 h-3 rounded-full bg-[var(--tinta)] mb-3"></div>
+                    <p class="font-bold text-sm">Electricidad</p>
+                </div>
             </div>
         </div>
-    </nav>
+    </section>
 
+    <div class="franja-caño"></div>
+
+    <!-- PORTFOLIO -->
     <section id="portfolio" class="max-w-7xl mx-auto py-16 px-6">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold text-gray-800">Nuestros Trabajos Realizados</h2>
-            <p class="text-gray-500 mt-2">Seleccioná una categoría arriba para filtrar las obras.</p>
+        <div class="text-center mb-10">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Trabajos realizados</h2>
+            <p class="text-gray-500 mt-2">Filtrá por categoría para ver obras similares a lo que necesitás.</p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-3 mb-12">
+            <button onclick="filtrar('todos', this)" class="btn-filtro filter-active px-5 py-2 rounded-full border-2 border-[var(--verde)] text-[var(--verde)] font-bold text-xs uppercase tracking-wide">Todos</button>
+            <button onclick="filtrar('gas', this)" class="btn-filtro px-5 py-2 rounded-full border-2 border-[var(--verde)] text-[var(--verde)] font-bold text-xs uppercase tracking-wide">Servicios de gas</button>
+            <button onclick="filtrar('agua', this)" class="btn-filtro px-5 py-2 rounded-full border-2 border-[var(--verde)] text-[var(--verde)] font-bold text-xs uppercase tracking-wide">Servicios de agua</button>
+            <button onclick="filtrar('luz', this)" class="btn-filtro px-5 py-2 rounded-full border-2 border-[var(--verde)] text-[var(--verde)] font-bold text-xs uppercase tracking-wide">Electricidad</button>
         </div>
 
         <div id="contenedor-trabajos" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            <article class="trabajo-card gas bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+
+            <article class="trabajo-card gas bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl">
                 <div class="h-64 overflow-hidden relative">
                     <img src="https://images.unsplash.com/photo-1585338447937-7082f8fc763d?auto=format&fit=crop&q=80" class="w-full h-full object-cover" alt="Caldera">
-                    <div class="absolute top-4 left-4 bg-[#2e7d32] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Gas</div>
+                    <div class="absolute top-4 left-4 bg-[var(--amarillo)] text-[var(--tinta)] text-[10px] font-bold px-3 py-1 rounded-full uppercase">Gas</div>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2">Instalación de Caldera Dual</h3>
+                    <h3 class="text-xl font-bold mb-2">Instalación de caldera dual</h3>
                     <p class="text-gray-600 text-sm">Montaje y puesta en marcha de sistema de calefacción central en edificio residencial.</p>
                 </div>
             </article>
 
-            <article class="trabajo-card luz bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+            <article class="trabajo-card luz bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl">
                 <div class="h-64 overflow-hidden relative">
                     <img src="https://images.unsplash.com/photo-1621905252507-b354bcadc8d0?auto=format&fit=crop&q=80" class="w-full h-full object-cover" alt="Electricidad">
-                    <div class="absolute top-4 left-4 bg-yellow-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Electricidad</div>
+                    <div class="absolute top-4 left-4 bg-[var(--tinta)] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Electricidad</div>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2">Reparación en Jardín de Infantes</h3>
+                    <h3 class="text-xl font-bold mb-2">Reparación en jardín de infantes</h3>
                     <p class="text-gray-600 text-sm">Adecuación de enchufes y tableros bajo normas de seguridad para establecimientos educativos.</p>
                 </div>
             </article>
 
-            <article class="trabajo-card agua bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+            <article class="trabajo-card agua bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl">
                 <div class="h-64 overflow-hidden relative">
                     <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80" class="w-full h-full object-cover" alt="Plomería">
                     <div class="absolute top-4 left-4 bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Agua</div>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2">Cambio de Colectores de Agua</h3>
+                    <h3 class="text-xl font-bold mb-2">Cambio de colectores de agua</h3>
                     <p class="text-gray-600 text-sm">Instalación de nuevas cañerías de termofusión en terraza de complejo de departamentos.</p>
                 </div>
             </article>
@@ -70,31 +159,60 @@
         </div>
     </section>
 
-    <footer class="bg-[#1a1a1a] text-white py-12 px-6 text-center">
-        <p class="text-[#4caf50] font-bold mb-4 text-xl">SMI Instalaciones</p>
-        <p class="text-gray-500 text-sm">Trabajos garantizados y matriculados.</p>
+    <div class="franja-caño"></div>
+
+    <!-- FOOTER -->
+    <footer id="contacto" class="bg-[var(--tinta)] text-white">
+        <div class="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-3 gap-10">
+            <div>
+                <p class="text-[var(--amarillo)] font-black text-xl mb-3 display">SMI INSTALACIONES</p>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Instalaciones y mantenimiento de gas, agua y electricidad. Trabajos garantizados y matriculados.
+                </p>
+            </div>
+
+            <div>
+                <p class="font-bold text-sm uppercase tracking-wide text-gray-300 mb-4">Contacto</p>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex items-center gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[var(--amarillo)] shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.1 15.1 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24 11.3 11.3 0 0 0 3.54.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.3 11.3 0 0 0 .57 3.54 1 1 0 0 1-.25 1.01l-2.2 2.24Z"/></svg>
+                        <a href="tel:3510219" class="hover:text-[var(--amarillo)] transition-colors">351 021-9</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[var(--amarillo)] shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M2 5.5A2.5 2.5 0 0 1 4.5 3h15A2.5 2.5 0 0 1 22 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 18.5v-13Zm2.2.5 7.15 5.4a1 1 0 0 0 1.2 0L19.8 6H4.2Z"/></svg>
+                        <a href="mailto:sminstalaciones@gmail.com" class="hover:text-[var(--amarillo)] transition-colors break-all">sminstalaciones@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <p class="font-bold text-sm uppercase tracking-wide text-gray-300 mb-4">Servicios</p>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li>Instalaciones y reparaciones de gas</li>
+                    <li>Plomería e instalaciones de agua</li>
+                    <li>Electricidad domiciliaria e industrial</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-white/10">
+            <p class="max-w-7xl mx-auto px-6 py-5 text-xs text-gray-500 text-center">
+                © 2026 SMI Instalaciones. Todos los derechos reservados.
+            </p>
+        </div>
     </footer>
 
     <script>
-        function filtrar(categoria) {
+        function filtrar(categoria, btn){
             const trabajos = document.querySelectorAll('.trabajo-card');
             const botones = document.querySelectorAll('.btn-filtro');
 
-            // 1. Manejar estado de los botones
-            botones.forEach(btn => btn.classList.remove('filter-active'));
-            event.currentTarget.classList.add('filter-active');
+            botones.forEach(b => b.classList.remove('filter-active'));
+            btn.classList.add('filter-active');
 
-            // 2. Mostrar/Ocultar tarjetas
             trabajos.forEach(card => {
-                if (categoria === 'todos') {
-                    card.style.display = 'block';
-                } else {
-                    if (card.classList.contains(categoria)) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                }
+                const mostrar = categoria === 'todos' || card.classList.contains(categoria);
+                card.style.display = mostrar ? 'block' : 'none';
             });
         }
     </script>
